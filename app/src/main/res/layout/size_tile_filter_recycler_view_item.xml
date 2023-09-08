@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="65dp"
+    android:layout_height="44dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="11dp"
+    android:background="@drawable/size_tile_filter_background_selector"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvSizeTileSizeType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="EU"
+        android:textColor="#2B2B2C"
+        android:textSize="13sp"
+        android:fontFamily="@font/dm_sans_regular"
+        android:layout_marginBottom="-9dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvSizeTileSize"
+        app:layout_constraintBottom_toTopOf="@id/tvSizeTileSize"/>
+
+    <TextView
+        android:id="@+id/tvSizeTileSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dm_sans_medium"
+        android:text="35"
+        android:textColor="#2B2B2C"
+        android:textSize="13sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeMaxTextSize="14sp"
+        android:autoSizeStepGranularity="1sp"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

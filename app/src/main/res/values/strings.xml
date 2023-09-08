@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Swey</string>
+    <string name="sign_in_text">Already have an account? Signin</string>
+    <string name="locale_filter_string">Local: <font color='#A1A1A1' size='9'>South Africa</font></string>
+    <string name="main_filter_title">Filter\n<font color='#0079FF' size='13'>Sort By</font></string>
+</resources>
