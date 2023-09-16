@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,14 +18,7 @@
         android:theme="@style/Theme.Swey"
         tools:targetApi="31">
         <activity
-            android:name=".ListingDetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".OnboardingActivity"
+            android:name=".features.onBoarding.OnboardingActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -28,19 +26,18 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".listingPage.ListingPageActivity"
+            android:name=".features.home.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".listingDetails.ListingDetailActivity"
+            android:name=".features.listingDetails.ListingDetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
