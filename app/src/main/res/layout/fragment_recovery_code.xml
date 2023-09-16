@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/ibBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:background="@null"
+            android:padding="@dimen/_24sdp"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/ic_back_button" />
+
+        <ImageView
+            android:layout_width="@dimen/_176sdp"
+            android:layout_height="@dimen/_176sdp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_recovery_asset"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/dm_sans_bold"
+            android:text="Recovery"
+            android:textColor="#2B2B2C"
+            android:textSize="34sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:letterSpacing="0.09"
+            android:lineSpacingExtra="@dimen/_6sdp"
+            android:text="Enter the 6-digit code sent to \nE-mail \nMossalasGroup@icloud.com"
+            android:textAlignment="center"
+            android:textColor="#61636F"
+            android:textSize="14sp" />
+
+        <include
+            android:id="@+id/layoutCodeOtp"
+            layout="@layout/code_onboarding_edit_text"
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVerify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/ic_button_bg"
+            android:fontFamily="@font/dm_sans_bold"
+            android:text="Verify"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_round_ripple"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCodeResend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend Code ( 02:34 )"
+            android:fontFamily="@font/dm_sans_bold"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,59 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_edittext_border"
+    android:paddingHorizontal="24dp">
+
+    <ImageView
+        android:id="@+id/startDrawable"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginVertical="24dp"
+        android:src="@drawable/ic_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/separatorLine"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="24dp"
+        android:layout_marginStart="24dp"
+        android:background="#DDDDDD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startDrawable"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Birthday"
+        android:textColor="#C7C7C7"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputEditText"
+        app:layout_constraintStart_toEndOf="@+id/separatorLine"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/inputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:hint="Birthday"
+        android:text="14/08/2020"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#2B2B2B"
+        android:textColorHint="#C7C7C7"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
