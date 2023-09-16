@@ -1,0 +1,43 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="message"
+            type="com.business.swey.core.models.ChatTextDto" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_11sdp"
+        android:paddingVertical="@dimen/_3sdp">
+
+        <include
+            android:id="@+id/layoutReply"
+            android:visibility="gone"
+            app:message="@{message.repliedTo}"
+            layout="@layout/view_chat_reply_received"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvMessageSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@drawable/bg_receive_message"
+            android:fontFamily="@font/poppins_medium"
+            android:maxWidth="@dimen/_240sdp"
+            android:paddingHorizontal="@dimen/_18ssp"
+            android:paddingVertical="@dimen/_8ssp"
+            android:text="@{message.message}"
+            android:textColor="#2E3A59"
+            android:textSize="@dimen/_11ssp"
+            tools:text="This is the message received!" />
+    </LinearLayout>
+</layout>

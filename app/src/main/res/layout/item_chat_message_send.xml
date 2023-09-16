@@ -1,0 +1,58 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="message"
+            type="com.business.swey.core.models.ChatTextDto" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_11sdp"
+        android:paddingVertical="@dimen/_3sdp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_read"
+            app:layout_constraintBottom_toBottomOf="@id/tvMessageSend"
+            app:layout_constraintEnd_toStartOf="@id/tvMessageSend"
+            app:layout_constraintTop_toTopOf="@id/tvMessageSend" />
+
+        <include
+            android:id="@+id/layoutReply"
+            layout="@layout/view_chat_reply_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/tvMessageSend"
+            app:layout_constraintEnd_toEndOf="@id/tvMessageSend"
+            app:layout_constraintTop_toTopOf="parent"
+            app:message="@{message.repliedTo}" />
+
+        <TextView
+            android:id="@+id/tvMessageSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_send_message"
+            android:fontFamily="@font/poppins_medium"
+            android:maxWidth="@dimen/_240sdp"
+            android:paddingHorizontal="@dimen/_18ssp"
+            android:paddingVertical="@dimen/_8ssp"
+            android:text="@{message.message}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutReply"
+            tools:text="This is a sent!" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
