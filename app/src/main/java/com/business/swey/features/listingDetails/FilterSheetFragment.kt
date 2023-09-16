@@ -1,4 +1,4 @@
-package com.business.swey.listingDetails
+package com.business.swey.features.listingDetails
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

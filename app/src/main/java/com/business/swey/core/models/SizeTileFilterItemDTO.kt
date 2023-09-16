@@ -1,6 +1,6 @@
-package com.business.swey.models
+package com.business.swey.core.models
 
-import com.business.swey.utils.Enum
+import com.business.swey.core.utils.Enum
 
 class SizeTileFilterItemDTO {
     constructor(sizeType: Enum.SizeType, size: String, isSelected: Boolean) {
@@ -9,7 +9,7 @@ class SizeTileFilterItemDTO {
         this.isSelected = isSelected
     }
 
-    var sizeType = com.business.swey.utils.Enum.SizeType.normal
+    var sizeType = Enum.SizeType.normal
     var size = ""
     var isSelected = false
 }

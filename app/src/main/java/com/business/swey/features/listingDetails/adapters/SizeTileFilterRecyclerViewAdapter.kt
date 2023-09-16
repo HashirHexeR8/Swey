@@ -1,4 +1,4 @@
-package com.business.swey.listingDetails.adapters
+package com.business.swey.features.listingDetails.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.business.swey.R
 import com.business.swey.databinding.SizeTileFilterRecyclerViewItemBinding
-import com.business.swey.models.SizeTileFilterItemDTO
+import com.business.swey.core.models.SizeTileFilterItemDTO
+import com.business.swey.core.utils.Enum
 
 class SizeTileFilterRecyclerViewAdapter: Adapter<RecyclerView.ViewHolder>() {
 
@@ -26,7 +27,7 @@ class SizeTileFilterRecyclerViewAdapter: Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val itemData = mItemsDataSource[position]
         if (holder is SizeTileRecyclerViewItemViewHolder) {
-            if (itemData.sizeType == com.business.swey.utils.Enum.SizeType.normal) {
+            if (itemData.sizeType == Enum.SizeType.normal) {
                 holder.itemViewBinding.tvSizeTileSizeType.visibility = View.GONE
             }
             else {

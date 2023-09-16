@@ -1,4 +1,4 @@
-package com.business.swey.listingDetails.adapters
+package com.business.swey.features.listingDetails.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

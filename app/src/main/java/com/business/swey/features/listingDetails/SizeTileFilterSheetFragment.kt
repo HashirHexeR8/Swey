@@ -1,4 +1,4 @@
-package com.business.swey.listingDetails
+package com.business.swey.features.listingDetails
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -11,10 +11,10 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.business.swey.R
 import com.business.swey.databinding.FragmentSizeTilesFilterBinding
-import com.business.swey.listingDetails.adapters.SizeTileFilterRecyclerViewAdapter
-import com.business.swey.models.SizeTileFilterItemDTO
-import com.business.swey.utils.Enum
-import com.business.swey.utils.Enum.SizeType.*
+import com.business.swey.features.listingDetails.adapters.SizeTileFilterRecyclerViewAdapter
+import com.business.swey.core.models.SizeTileFilterItemDTO
+import com.business.swey.core.utils.Enum
+import com.business.swey.core.utils.Enum.SizeType.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayout
 

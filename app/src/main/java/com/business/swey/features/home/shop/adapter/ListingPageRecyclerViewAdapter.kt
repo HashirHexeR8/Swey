@@ -1,22 +1,15 @@
-package com.business.swey.listingPage.adapter
+package com.business.swey.features.home.shop.adapter
 
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.business.swey.SweyApplication
-import com.business.swey.databinding.ListingPageReyclerViewItemBinding
 import com.business.swey.databinding.NormalInvertedProductSectionItemBinding
 import com.business.swey.databinding.NormalProductSectionItemBinding
 import com.business.swey.databinding.VerticalProductSectionItemBinding
-import com.business.swey.models.ListingPageProductDTO
-import com.business.swey.models.ListingPageProductSectionDTO
-import com.business.swey.utils.Constants
-import com.business.swey.utils.Enum
-import com.business.swey.utils.Utilities
+import com.business.swey.core.models.ListingPageProductDTO
+import com.business.swey.core.models.ListingPageProductSectionDTO
+import com.business.swey.core.utils.Enum
 
 
 class ListingPageRecyclerViewAdapter(itemsDataSource: ArrayList<ListingPageProductSectionDTO>, itemLongClickListener: ((product: ListingPageProductDTO) -> Unit)?, itemClickListener: ((product: ListingPageProductDTO) -> Unit)?): Adapter<RecyclerView.ViewHolder>() {

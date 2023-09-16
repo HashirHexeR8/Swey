@@ -1,4 +1,4 @@
-package com.business.swey.listingDetails
+package com.business.swey.features.listingDetails
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,12 +6,11 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.business.swey.R
 import com.business.swey.databinding.ActivityListingDetailBinding
-import com.business.swey.listingDetails.adapters.ListingDetailRecyclerViewAdapter
-import com.business.swey.listingPage.ListingPageProductDetailDialogFragment
-import com.business.swey.listingPage.adapter.ListingPageRecyclerViewAdapter
-import com.business.swey.models.ListingPageProductDTO
-import com.business.swey.models.ListingPageProductSectionDTO
-import com.business.swey.utils.Enum
+import com.business.swey.features.listingDetails.adapters.ListingDetailRecyclerViewAdapter
+import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
+import com.business.swey.core.models.ListingPageProductDTO
+import com.business.swey.core.models.ListingPageProductSectionDTO
+import com.business.swey.core.utils.Enum
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 
