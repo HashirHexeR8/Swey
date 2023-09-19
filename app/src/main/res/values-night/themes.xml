@@ -2,15 +2,29 @@
     <!-- Base application theme. -->
     <style name="Theme.Swey" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/appPrimaryColor</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
+        <item name="bottomSheetDialogTheme">@style/CustomRoundedBottomSheetDialog</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="android:navigationBarColor">@color/primary_background_color</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Activity.NoTitle" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:editTextColor">@color/primary_text_color</item>
+        <item name="android:textColorHint">#DADADA</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">12sp</item>
     </style>
 </resources>

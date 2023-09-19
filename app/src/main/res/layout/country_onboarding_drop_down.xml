@@ -22,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_marginVertical="@dimen/_19sdp"
         android:layout_marginStart="@dimen/_19sdp"
-        android:background="#DDDDDD"
+        android:background="@color/separator_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/startDrawable"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
         android:hint="Enter"
         android:text="+1 United States"
         android:fontFamily="@font/poppins_medium"
-        android:textColor="#2B2B2B"
+        android:textColor="@color/primary_text_color"
         android:textColorHint="#C7C7C7"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"

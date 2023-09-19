@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.business.swey.R
+import com.business.swey.core.base.RoundedBottomSheetDialogBindingFragment
 import com.business.swey.databinding.FragmentSizeTilesFilterBinding
 import com.business.swey.features.listingDetails.adapters.SizeTileFilterRecyclerViewAdapter
 import com.business.swey.core.models.SizeTileFilterItemDTO
@@ -18,67 +19,44 @@ import com.business.swey.core.utils.Enum.SizeType.*
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayout
 
-class SizeTileFilterSheetFragment: BottomSheetDialogFragment() {
+class SizeTileFilterSheetFragment: RoundedBottomSheetDialogBindingFragment<FragmentSizeTilesFilterBinding>() {
 
-    companion object Factory {
-        fun create(): SizeTileFilterSheetFragment = SizeTileFilterSheetFragment()
-    }
+    override fun getLayout() = R.layout.fragment_size_tiles_filter
 
-    private lateinit var fragmentViewBinding: FragmentSizeTilesFilterBinding
+    override fun initViews(binding: FragmentSizeTilesFilterBinding) {
+        createBlurredOverlay()
+        binding.tlSizeTileType.addTab(binding.tlSizeTileType.newTab().setText("EU"))
+        binding.tlSizeTileType.addTab(binding.tlSizeTileType.newTab().setText("US"))
+        binding.tlSizeTileType.addTab(binding.tlSizeTileType.newTab().setText("UK"))
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        fragmentViewBinding = FragmentSizeTilesFilterBinding.inflate(inflater, container, false)
-        return fragmentViewBinding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        fragmentViewBinding.tlSizeTileType.addTab(fragmentViewBinding.tlSizeTileType.newTab().setText("EU"))
-        fragmentViewBinding.tlSizeTileType.addTab(fragmentViewBinding.tlSizeTileType.newTab().setText("US"))
-        fragmentViewBinding.tlSizeTileType.addTab(fragmentViewBinding.tlSizeTileType.newTab().setText("UK"))
-
-        fragmentViewBinding.rvSizeTile.layoutManager = GridLayoutManager(this@SizeTileFilterSheetFragment.context, 5, GridLayoutManager.VERTICAL, false)
+        binding.rvSizeTile.layoutManager = GridLayoutManager(this@SizeTileFilterSheetFragment.context, 5, GridLayoutManager.VERTICAL, false)
         val adapter = SizeTileFilterRecyclerViewAdapter()
         adapter.setDataSource(createSizeDataSource(eu))
-        fragmentViewBinding.rvSizeTile.adapter = adapter
-        setupBlurredOverlayBackground()
+        binding.rvSizeTile.adapter = adapter
 
-        fragmentViewBinding.tlSizeTileType.addOnTabSelectedListener(object:
+        binding.tlSizeTileType.addOnTabSelectedListener(object:
             TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
 
             }
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                if (fragmentViewBinding.tlSizeTileType.selectedTabPosition == 0) {
-                    adapter.setDataSource(createSizeDataSource(eu))
-                }
-                else if (fragmentViewBinding.tlSizeTileType.selectedTabPosition == 1) {
-                    adapter.setDataSource(createSizeDataSource(us))
-                }
-                else {
-                    adapter.setDataSource(createSizeDataSource(uk))
+                when (binding.tlSizeTileType.selectedTabPosition) {
+                    0 -> {
+                        adapter.setDataSource(createSizeDataSource(eu))
+                    }
+                    1 -> {
+                        adapter.setDataSource(createSizeDataSource(us))
+                    }
+                    else -> {
+                        adapter.setDataSource(createSizeDataSource(uk))
+                    }
                 }
             }
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
         })
 
-        super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun setupBlurredOverlayBackground() {
-
-//        val parent = view?.parent as? ViewGroup
-//        val overlayView = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_overlay, parent, false)
-//        val blurredOverlay = createBlurredOverlay()
-//
-//        // Set the blurred overlay as the view's background
-//        overlayView.background = BitmapDrawable(resources, blurredOverlay)
-//
-//        // Set the overlay as the bottom sheet's background
-//        dialog?.window?.setBackgroundDrawable(overlayView.background)
-    }
 
     private fun createBlurredOverlay(): Bitmap {
         val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.blue_overlay)
@@ -90,7 +68,7 @@ class SizeTileFilterSheetFragment: BottomSheetDialogFragment() {
     }
 
     private fun createSizeDataSource(sizeType: Enum.SizeType): ArrayList<SizeTileFilterItemDTO> {
-        var sizesList = ArrayList<SizeTileFilterItemDTO>()
+        val sizesList = ArrayList<SizeTileFilterItemDTO>()
         var initValue: Double = when (sizeType) {
             uk -> {
                  6.5
@@ -114,6 +92,10 @@ class SizeTileFilterSheetFragment: BottomSheetDialogFragment() {
         sizesList.add(SizeTileFilterItemDTO(normal, "Other", false))
 
         return sizesList
+    }
+
+    companion object {
+        fun getInstance(): SizeTileFilterSheetFragment = SizeTileFilterSheetFragment()
     }
 
 }

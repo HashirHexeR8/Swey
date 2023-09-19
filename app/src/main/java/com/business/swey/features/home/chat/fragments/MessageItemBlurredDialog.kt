@@ -88,7 +88,7 @@ class MessageItemBlurredDialog :
                 topMargin = screenY
                 leftMargin = screenX
             }
-
+        itemBinding.root.elevation = 3F
         binding.parent.addView(itemBinding.root, layout)
     }
 

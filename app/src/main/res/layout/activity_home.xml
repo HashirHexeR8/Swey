@@ -32,9 +32,9 @@
                     app:tabIndicator="@drawable/tab_indicator"
                     app:tabIndicatorColor="@color/appPrimaryColor"
                     app:tabIndicatorHeight="1dp"
-                    app:tabSelectedTextColor="@color/appPrimaryColor"
+                    app:tabSelectedTextColor="@color/tabs_text_color_selected"
                     app:tabTextAppearance="@style/tabTextStyle"
-                    app:tabTextColor="@color/black" />
+                    app:tabTextColor="@color/tabs_text_color" />
             </androidx.viewpager.widget.ViewPager>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>

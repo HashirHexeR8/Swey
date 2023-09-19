@@ -6,7 +6,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/primary_background_color"
         android:orientation="vertical">
 
         <androidx.core.widget.NestedScrollView
@@ -26,7 +26,7 @@
                     android:layout_marginTop="@dimen/_16sdp"
                     android:fontFamily="@font/dm_sans_bold"
                     android:text="Quick Pay"
-                    android:textColor="#2B2B2C"
+                    android:textColor="@color/primary_text_color"
                     android:textSize="@dimen/_22ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
                     android:layout_height="@dimen/_38sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:padding="@dimen/_30sdp"
-                    app:cardBackgroundColor="#1961636F"
+                    app:cardBackgroundColor="#33D8D8D8"
                     app:cardCornerRadius="50dp"
                     app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="@id/tvQuickPay"
@@ -84,7 +84,7 @@
                     android:layout_marginTop="@dimen/_16sdp"
                     android:fontFamily="@font/dm_sans_bold"
                     android:text="Chat"
-                    android:textColor="#2B2B2C"
+                    android:textColor="@color/primary_text_color"
                     android:textSize="@dimen/_22ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view"
@@ -109,6 +109,7 @@
                     android:id="@+id/tabLayoutChats"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    app:tabMode="scrollable"
                     android:layout_marginTop="@dimen/_16sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +120,7 @@
                     app:tabIndicatorHeight="1dp"
                     app:tabSelectedTextColor="@color/appPrimaryColor"
                     app:tabTextAppearance="@style/tabTextStyleChat"
-                    app:tabTextColor="@color/black" />
+                    app:tabTextColor="@color/tabs_text_color" />
 
                 <FrameLayout
                     android:id="@+id/fragmentContainer"

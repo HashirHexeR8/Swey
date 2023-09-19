@@ -15,7 +15,7 @@ import com.business.swey.core.models.ListingPageProductDTO
 import com.business.swey.core.models.ListingPageProductSectionDTO
 import com.business.swey.core.utils.Enum
 import com.business.swey.databinding.FragmentShopBinding
-import com.business.swey.features.listingDetails.FilterSheetFragment
+import com.business.swey.features.listingDetails.FilterBottomSheetFragment
 import com.business.swey.features.listingDetails.ListingDetailActivity
 import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
 
@@ -44,7 +44,7 @@ class ShopFragment : Fragment() {
         searchImageIcon.setImageResource(R.drawable.ic_search)
 
         binding.ibFilterButton.setOnClickListener {
-            FilterSheetFragment.create().show(childFragmentManager, "FilterSheetFragment")
+            FilterBottomSheetFragment.getInstance().show(childFragmentManager, "FilterSheetFragment")
         }
 
         binding.rvListingPage.addOnScrollListener(object : RecyclerView.OnScrollListener() {

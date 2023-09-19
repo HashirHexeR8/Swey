@@ -33,7 +33,7 @@
             android:textSize="@dimen/_8ssp"
             android:textAlignment="center"
             android:layout_gravity="center"
-            android:textColor="#2B2B2C"
+            android:textColor="@color/primary_text_color"
             android:layout_marginTop="@dimen/_6sdp"/>
     </LinearLayout>
 </layout>

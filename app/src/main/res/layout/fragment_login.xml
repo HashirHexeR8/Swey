@@ -14,9 +14,7 @@
             android:layout_marginStart="24dp"
             android:background="@null"
             android:padding="24dp"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:src="@drawable/ic_back_button" />
+            android:src="@drawable/ic_back_arrow" />
 
         <ImageView
             android:layout_width="@dimen/_180sdp"
@@ -30,7 +28,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/dm_sans_bold"
             android:text="Welcome Back!"
-            android:textColor="#2B2B2C"
+            android:textColor="@color/primary_text_color"
             android:textSize="34sp" />
 
         <TextView
@@ -43,7 +41,7 @@
             android:lineSpacingExtra="6dp"
             android:text="Enter your account information"
             android:textAlignment="center"
-            android:textColor="#61636F"
+            android:textColor="@color/secondary_text_color"
             android:textSize="14sp" />
 
         <LinearLayout
@@ -58,7 +56,7 @@
                 android:fontFamily="@font/dm_sans_bold"
                 android:text="Use Phone Number"
                 android:textAlignment="center"
-                android:textColor="#2B2B2B"
+                android:textColor="@color/primary_text_color"
                 android:textSize="12sp" />
 
             <CheckBox
@@ -112,7 +110,7 @@
             android:fontFamily="@font/poppins_medium"
             android:text="@string/sign_up_text"
             android:textAlignment="center"
-            android:textColor="#61636F"
+            android:textColor="@color/secondary_text_color"
             android:textSize="14sp" />
     </LinearLayout>
 </layout>

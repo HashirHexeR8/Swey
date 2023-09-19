@@ -50,8 +50,8 @@ class SizeTileFilterRecyclerViewAdapter: Adapter<RecyclerView.ViewHolder>() {
                     holder.itemViewBinding.tvSizeTileSizeType.setTextColor(holder.itemView.resources.getColor(R.color.size_text_color_selected))
                 }
                 else {
-                    holder.itemViewBinding.tvSizeTileSize.setTextColor(holder.itemView.resources.getColor(R.color.size_text_color_normal))
-                    holder.itemViewBinding.tvSizeTileSizeType.setTextColor(holder.itemView.resources.getColor(R.color.size_text_color_normal))
+                    holder.itemViewBinding.tvSizeTileSize.setTextColor(holder.itemView.resources.getColor(R.color.primary_text_color))
+                    holder.itemViewBinding.tvSizeTileSizeType.setTextColor(holder.itemView.resources.getColor(R.color.primary_text_color))
                 }
             }
         }

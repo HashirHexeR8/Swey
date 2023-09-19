@@ -23,7 +23,7 @@
             android:text="@{timestamp.timestamp}"
             android:fontFamily="@font/dm_sans_bold"
             android:textSize="@dimen/_9ssp"
-            android:textColor="#61636F"/>
+            android:textColor="@color/secondary_text_color"/>
 
     </FrameLayout>
 </layout>

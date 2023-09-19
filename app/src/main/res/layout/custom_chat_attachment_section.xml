@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:cardBackgroundColor="#D9D9D9"
+        app:cardBackgroundColor="@color/chat_attachment_background"
         app:cardCornerRadius="30dp"
         app:cardElevation="@dimen/_12sdp">
 
@@ -31,7 +31,7 @@
                         android:id="@+id/btnCamera"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="#EEF2F9"
+                        android:background="@color/chat_box_background"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?attr/selectableItemBackground"
@@ -71,7 +71,7 @@
                         android:id="@+id/btnPay"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="#EEF2F9"
+                        android:background="@color/chat_box_background"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?attr/selectableItemBackground"
@@ -110,8 +110,8 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="#D9D9D9"
+                        android:layout_height="1dp"
+                        android:background="@color/chat_attachment_background"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
                         android:id="@+id/btnFile"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="#EEF2F9"
+                        android:background="@color/chat_box_background"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?attr/selectableItemBackground"
@@ -160,7 +160,7 @@
                         android:id="@+id/btnEVite"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="#EEF2F9"
+                        android:background="@color/chat_box_background"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?attr/selectableItemBackground"
@@ -238,7 +238,7 @@
                         android:layout_height="1dp"
                         android:layout_marginHorizontal="@dimen/_11sdp"
                         android:layout_marginVertical="@dimen/_16sdp"
-                        android:background="#3BABABAB"
+                        android:background="@color/separator_color"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -269,7 +269,7 @@
                             android:layout_weight="0.80"
                             android:fontFamily="@font/poppins_medium"
                             android:text="Request"
-                            android:textColor="#2E3A59"
+                            android:textColor="@color/icon_primary_background"
                             android:textSize="@dimen/_11ssp" />
 
                     </LinearLayout>
@@ -292,7 +292,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Cancel"
-                    android:textColor="#2E3A59"
+                    android:textColor="@color/icon_primary_background"
                     android:textSize="@dimen/_11ssp" />
 
                 <ImageView

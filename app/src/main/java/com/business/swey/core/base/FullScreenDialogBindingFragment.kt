@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
@@ -48,6 +49,7 @@ abstract class FullScreenDialogBindingFragment<DB : ViewDataBinding> :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding.root.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.primary_background_color))
         initViews(_binding)
         setListeners(_binding)
         setObservers()

@@ -20,7 +20,7 @@
             android:id="@+id/cardParent"
             android:layout_width="@dimen/_210sdp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#F2F3F5"
+            app:cardBackgroundColor="@color/chat_reply_color"
             app:cardElevation="0dp"
             app:cardPreventCornerOverlap="false"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -5,7 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:background="@color/primary_background_color">
 
         <RelativeLayout
             android:id="@+id/listingPageSearch"
@@ -25,31 +25,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@id/ibFilterButton"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"                android:layout_toStartOf="@id/ibFilterButton"
                 android:iconifiedByDefault="false"
                 android:queryBackground="@android:color/transparent"
-                android:queryHint="Search your product..." />
+                android:queryHint="Search your product..."
+                android:theme="@style/AppSearchView" />
 
-            <androidx.appcompat.widget.AppCompatImageButton
+            <ImageView
                 android:id="@+id/ibFilterButton"
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="18dp"
-                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/custom_round_ripple"
                 android:src="@drawable/ic_filter_button" />
         </RelativeLayout>
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/userImage"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="17dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_round_ripple"
             android:src="@drawable/userprofile"
             app:layout_constraintBottom_toTopOf="@id/rvListingPage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvListingPage"

@@ -6,10 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#33000000"
+            android:elevation="1dp" />
+
         <ImageView
             android:id="@+id/ivBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:elevation="0dp"
             android:scaleType="centerCrop"/>
     </FrameLayout>
 </layout>

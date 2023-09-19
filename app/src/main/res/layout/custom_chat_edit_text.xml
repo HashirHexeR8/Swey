@@ -16,8 +16,9 @@
             android:layout_height="wrap_content"
             app:cardElevation="0dp"
             android:visibility="gone"
+            android:background="@color/primary_background_color"
             android:layout_marginBottom="@dimen/_minus20sdp"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="@color/chat_box_background"
             app:cardPreventCornerOverlap="true"
             app:shapeAppearanceOverlay="@style/Rounded.Cut.Reply">
 
@@ -60,7 +61,7 @@
                     android:paddingEnd="@dimen/_8sdp"
                     android:fontFamily="@font/dm_sans_bold"
                     android:text="Replying to Shirley"
-                    android:textColor="#2B2B2C"
+                    android:textColor="@color/primary_text_color"
                     android:textSize="@dimen/_10ssp"
                     app:layout_constraintBottom_toTopOf="@+id/tvDescription"
                     app:layout_constraintStart_toStartOf="@id/separatorReply"
@@ -75,7 +76,7 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="This is a message that is being replied to!"
                     android:layout_marginEnd="@dimen/_8sdp"
-                    android:textColor="#61636F"
+                    android:textColor="@color/secondary_text_color"
                     android:textSize="@dimen/_10ssp"
                     app:layout_constraintEnd_toStartOf="@id/btnCloseReply"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -84,14 +85,14 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="0dp"
-            app:cardBackgroundColor="#EEF2F9"
+            android:background="@color/primary_background_color"
+            app:cardBackgroundColor="@color/chat_box_background"
             app:cardCornerRadius="30dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -146,7 +147,7 @@
                     android:background="@null"
                     android:fontFamily="@font/dm_sans_medium"
                     android:hint="Type a message..."
-                    android:textColorHint="#982E3A59"
+                    android:textColorHint="@color/chat_hint_color"
                     android:textSize="@dimen/_11ssp"
                     app:layout_constraintBottom_toBottomOf="@id/separatorLineStart"
                     app:layout_constraintEnd_toStartOf="@id/layoutEndSection"
