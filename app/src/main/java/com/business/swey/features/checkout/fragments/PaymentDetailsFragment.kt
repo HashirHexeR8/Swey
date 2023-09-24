@@ -1,5 +1,6 @@
 package com.business.swey.features.checkout.fragments
 
+import android.animation.ObjectAnimator
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -131,6 +132,7 @@ class PaymentDetailsFragment : FullScreenDialogBindingFragment<FragmentPaymentDe
     }
 
     private fun setWalletListener(binding: ViewSweyWalletBinding){
+        var progress = 0
         binding.root.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_SHORT).show()
             isWalletChecked = !isWalletChecked
@@ -138,6 +140,21 @@ class PaymentDetailsFragment : FullScreenDialogBindingFragment<FragmentPaymentDe
                 binding.ivCheck.setImageResource(R.drawable.ic_filled_mark)
             else
                 binding.ivCheck.setImageResource(R.drawable.ic_unfilled_mark)
+        }
+        binding.root.setOnLongClickListener {
+            progress += 20
+            progress %= 100
+            ObjectAnimator.ofInt(binding.progressWalletCoin, "progress", progress)
+                .setDuration(500)
+                .start()
+            binding.ivCheck.setImageResource(
+                if (progress >= 10)
+                    R.drawable.ic_filled_mark_white else R.drawable.ic_filled_mark
+            )
+            binding.tvTitle.setTextColor(
+                ContextCompat.getColor(requireContext(), if (progress >= 50) R.color.white else R.color.primary_text_color_title)
+            )
+            true
         }
     }
 

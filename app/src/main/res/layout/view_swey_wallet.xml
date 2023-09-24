@@ -14,7 +14,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
-            android:progress="40"
+            android:progress="0"
             android:progressDrawable="@drawable/progress_bar_gradient_wallet"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
