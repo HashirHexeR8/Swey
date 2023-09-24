@@ -41,8 +41,7 @@ import com.business.swey.features.home.chat.adapters.viewHolders.TimeStampViewHo
 class ChatMessagesAdapter(
     private val onMessageLongClick: (ChatDto, IntArray) -> Unit,
     private val onMessageClick: (ChatDto) -> Unit
-) : ListAdapter<ChatDto, RecyclerView.ViewHolder>(ChatDiffCallback()) {
-
+) : ListAdapter<ChatDto, RecyclerView.ViewHolder>(CartDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -275,7 +274,7 @@ class ChatMessagesAdapter(
     }
 }
 
-class ChatDiffCallback : DiffUtil.ItemCallback<ChatDto>() {
+class CartDiffCallback : DiffUtil.ItemCallback<ChatDto>() {
     override fun areItemsTheSame(oldItem: ChatDto, newItem: ChatDto): Boolean {
         return oldItem == newItem
     }

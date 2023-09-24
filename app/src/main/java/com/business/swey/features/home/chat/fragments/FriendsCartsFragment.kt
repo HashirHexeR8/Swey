@@ -9,6 +9,7 @@ import com.business.swey.core.models.ChatStatusType
 import com.business.swey.core.models.ChatTextDto
 import com.business.swey.core.models.ChatType
 import com.business.swey.databinding.FragmentFriendsCartsBinding
+import com.business.swey.features.checkout.fragments.CheckoutCartFragment
 import com.business.swey.features.home.chat.adapters.AllChatsAdapter
 import java.time.Instant
 import java.util.Date
@@ -29,7 +30,7 @@ class FriendsCartsFragment : BindingFragment<FragmentFriendsCartsBinding>() {
     override fun setListeners(binding: FragmentFriendsCartsBinding) {}
 
     private fun onCartClick(personChatDto: PersonChatDto) {
-        Toast.makeText(requireContext(), personChatDto.lastMessage.message, Toast.LENGTH_SHORT).show()
+        openDialogSheet(CheckoutCartFragment.getInstance(CheckoutCartFragment.CartType.FRIENDS_CART), CheckoutCartFragment.TAG)
     }
 
     private fun getData(): List<PersonChatDto> {
