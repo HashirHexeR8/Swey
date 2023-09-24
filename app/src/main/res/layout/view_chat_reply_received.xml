@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="message"
+            type="com.business.swey.core.models.ChatTextDto" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/dm_sans_bold"
+            android:maxWidth="@dimen/_192sdp"
+            android:text="•   •   to you"
+            android:textColor="#7B8EBB"
+            android:textSize="@dimen/_6ssp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_3sdp"
+            android:gravity="start">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_4sdp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#80F2F3F5"/>
+
+            <TextView
+                android:id="@+id/tvMessageSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_send_replied_message"
+                android:fontFamily="@font/poppins_medium"
+                android:maxWidth="@dimen/_192sdp"
+                android:paddingHorizontal="@dimen/_18ssp"
+                android:paddingVertical="@dimen/_8ssp"
+                android:text="@{message.message}"
+                android:textColor="#7B8396"
+                android:textSize="@dimen/_9ssp"
+                tools:text="This is a replied to message!" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:id="@+id/priceBoxContainer"
@@ -12,16 +18,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/ic_price_box"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:paddingBottom="8dp"
                 android:text="299.99$"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white" />
         </RelativeLayout>
 
         <ImageView
@@ -29,50 +36,110 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/priceBoxContainer"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/priceBoxContainer" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_text_background_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_18sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:text="Share"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/shareButton"
+            app:layout_constraintEnd_toStartOf="@+id/shareButton"
+            app:layout_constraintTop_toTopOf="@+id/shareButton" />
+
+        <ImageButton
             android:id="@+id/shareButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/ic_sharebutton"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
             android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/productImage"
+            android:background="@drawable/ic_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_round_ripple"
+            android:src="@drawable/ic_incoming_outgoing_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-        <androidx.appcompat.widget.AppCompatImageButton
+            app:layout_constraintTop_toBottomOf="@id/productImage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_text_background_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_18sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:text="Message Store"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/chatButton"
+            app:layout_constraintStart_toEndOf="@+id/chatButton"
+            app:layout_constraintTop_toTopOf="@+id/chatButton" />
+
+        <ImageButton
             android:id="@+id/chatButton"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_round_ripple"
+            android:src="@drawable/ic_chat_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shareButton" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/ic_chatbutton"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/shareButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-        <androidx.appcompat.widget.AppCompatImageButton
+            android:background="@drawable/ic_text_background_rounded"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingHorizontal="@dimen/_18sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:text="Add to Cart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/cartButton"
+            app:layout_constraintEnd_toStartOf="@+id/cartButton"
+            app:layout_constraintTop_toTopOf="@+id/cartButton" />
+
+        <ImageButton
             android:id="@+id/cartButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/ic_cartbutton"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/chatButton"
+            android:background="@drawable/ic_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_round_ripple"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-        <androidx.appcompat.widget.AppCompatImageButton
+            app:layout_constraintTop_toBottomOf="@id/chatButton" />
+
+        <ImageButton
             android:id="@+id/cancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/ic_cancel_button"
+            android:layout_width="@dimen/_62sdp"
+            android:layout_height="@dimen/_62sdp"
             android:layout_marginTop="18dp"
-            app:layout_constraintTop_toBottomOf="@id/cartButton"
+            android:background="@drawable/ic_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_round_ripple"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/cartButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

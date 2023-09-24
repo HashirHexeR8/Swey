@@ -1,0 +1,48 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="message"
+            type="com.business.swey.core.models.ChatPayDto" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_11sdp"
+        android:paddingVertical="@dimen/_3sdp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_read"
+            app:layout_constraintBottom_toBottomOf="@id/cardParent"
+            app:layout_constraintEnd_toStartOf="@id/cardParent"
+            app:layout_constraintTop_toTopOf="@id/cardParent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardParent"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#4045A3FF"
+            app:cardElevation="0dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/Rounded.Cut.Send">
+
+            <include
+                android:id="@+id/layoutPayment"
+                layout="@layout/view_message_payment"
+                app:message="@{message}" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
