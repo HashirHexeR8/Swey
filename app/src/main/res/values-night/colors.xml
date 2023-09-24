@@ -15,13 +15,25 @@
     <color name="primary_text_color_title">#FFFFFF</color>
     <color name="size_text_color_selected">#FFFFFF</color>
     <color name="secondary_background_color">#1AFFFFFF</color>
+    <color name="background_color_variant_A">#333333</color>
     <color name="separator_color">#4DFFFFFF</color>
     <color name="tabs_text_color_selected">#CCCCCC</color>
     <color name="tabs_text_color">#99FFFFFF</color>
     <color name="search_view_background">#2B2B2C</color>
+    <color name="edit_text_background">#1AFFFFFF</color>
     <color name="chat_box_background">#464646</color>
     <color name="icon_primary_background">#FFFFFF</color>
     <color name="chat_attachment_background">#3E4249</color>
     <color name="chat_hint_color">#98FFFFFF</color>
     <color name="chat_reply_color">#33FFFFFF</color>
+    <color name="coupon_background_color">#14EEEEFF</color>
+    <color name="secondary_separator_color">#494545</color>
+    <color name="receipt_payment_border">@color/primary_background_color</color>
+    <color name="receipt_payment_background">@color/secondary_background_color</color>
+    <color name="payment_details_background">@color/primary_background_color</color>
+    <color name="tip_background_color">#0DF5F5F5</color>
+    <color name="check_mark_color">@color/white</color>
+    <color name="wallet_progress_background">@color/background_color_variant_A</color>
+    <color name="wallet_progress_border">#1AFFFFFF</color>
+    <color name="app_green">#34F85C</color>
 </resources>

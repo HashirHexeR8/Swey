@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/_36sdp">
+
+                <ImageButton
+                    android:id="@+id/ibBackButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@null"
+                    android:paddingVertical="@dimen/_19sdp"
+                    android:paddingStart="@dimen/_18sdp"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:src="@drawable/ic_back_arrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Go Shopping"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_text_color_title"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ibBackButton"
+                    app:layout_constraintStart_toEndOf="@id/ibBackButton"
+                    app:layout_constraintTop_toTopOf="@id/ibBackButton" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_34sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Cart:"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_text_color_title"
+                    android:textSize="@dimen/_21ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBarTitle" />
+
+                <ImageView
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"
+                    android:layout_marginEnd="@dimen/_11sdp"
+                    android:src="@drawable/ic_swey_purple"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivPicture"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_marginTop="@dimen/_21sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person_2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvName"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Total Cart"
+                    android:textColor="@color/secondary_text_color"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivPicture"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivPicture"
+                    app:layout_constraintTop_toTopOf="@+id/ivPicture" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="$ 11,240"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_text_color_title"
+                    android:textSize="@dimen/_21ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                <LinearLayout
+                    android:id="@+id/layoutCheckoutShare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotal">
+
+                    <TextView
+                        android:id="@+id/btnShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_one_side_rounded"
+                        android:drawablePadding="@dimen/_8sdp"
+                        android:fontFamily="@font/dm_sans_bold"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/custom_left_round_ripple"
+                        android:letterSpacing="0.03"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Share Cart"
+                        android:textAlignment="center"
+                        android:textColor="@color/secondary_text_color"
+                        android:textSize="@dimen/_10ssp"
+                        app:drawableStartCompat="@drawable/ic_share" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnCheckout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_weight="0.7"
+                        android:theme="@style/Rounded.Cut.End"
+                        app:cardElevation="@dimen/_12sdp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_gradient_one_side_rounded"
+                            android:fontFamily="@font/dm_sans_bold"
+                            android:gravity="center"
+                            android:letterSpacing="0.06"
+                            android:padding="@dimen/_10sdp"
+                            android:text="Checkout"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp"
+                            app:drawableEndCompat="@drawable/ic_arrow_forward" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Products:"
+                    android:textAlignment="center"
+                    android:textColor="@color/primary_text_color_title"
+                    android:textSize="@dimen/_21ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvClearCart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvClearCart" />
+
+                <TextView
+                    android:id="@+id/tvClearCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_46sdp"
+                    android:layout_marginEnd="@dimen/_11sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:foreground="@drawable/custom_round_ripple"
+                    android:letterSpacing="0.01"
+                    android:padding="@dimen/_4sdp"
+                    android:text="Clear Cart"
+                    android:textAlignment="center"
+                    android:textColor="#E50000"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutCheckoutShare" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvClearCart"
+                    tools:listitem="@layout/item_cart" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layoutCheckoutBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:cardBackgroundColor="@color/secondary_background_color"
+                    app:cardCornerRadius="21dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="@id/layoutBottomButtons"
+                    app:layout_constraintStart_toStartOf="@id/layoutBottomButtons"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerView">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:paddingHorizontal="@dimen/_14sdp"
+                        android:paddingTop="@dimen/_14sdp"
+                        android:paddingBottom="@dimen/_50sdp">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Subtotal"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toTopOf="@+id/tv2"
+                            app:layout_constraintStart_toStartOf="@+id/tv2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_chainStyle="spread" />
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Commission"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toTopOf="@+id/tv3"
+                            app:layout_constraintStart_toStartOf="@+id/tv3"
+                            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Coupon"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="$998"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv1"
+                            app:layout_constraintVertical_chainStyle="spread" />
+
+                        <TextView
+                            android:id="@+id/tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="$20"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv2"
+                            app:layout_constraintEnd_toEndOf="@+id/tv4"
+                            app:layout_constraintTop_toTopOf="@+id/tv2" />
+
+                        <EditText
+                            android:id="@+id/editTextCoupon"
+                            android:layout_width="@dimen/_128sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_minus8sdp"
+                            android:background="@drawable/coupon_edit_text_background"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv3"
+                            app:layout_constraintEnd_toEndOf="@id/tv5"
+                            app:layout_constraintTop_toTopOf="@+id/tv3" />
+
+                        <View
+                            android:id="@+id/separator"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:background="@color/secondary_separator_color"
+                            app:layout_constraintTop_toBottomOf="@id/editTextCoupon"
+                            tools:layout_editor_absoluteX="19dp" />
+
+                        <TextView
+                            android:id="@+id/tv7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="TOTAL"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintStart_toStartOf="@+id/separator"
+                            app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+                        <TextView
+                            android:id="@+id/tv8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="$20"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv7"
+                            app:layout_constraintEnd_toEndOf="@+id/separator"
+                            app:layout_constraintTop_toTopOf="@+id/tv7" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <FrameLayout
+                    android:id="@+id/layoutBottomButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_32sdp"
+                    android:layout_marginTop="@dimen/_minus30sdp"
+                    app:layout_constraintTop_toBottomOf="@id/layoutCheckoutBottom">
+
+                    <TextView
+                        android:id="@+id/btnCheckoutBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:background="@drawable/ic_button_bg"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/dm_sans_bold"
+                        android:foreground="@drawable/custom_round_ripple"
+                        android:gravity="center"
+                        android:letterSpacing="0.08"
+                        android:text="Checkout"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutCheckoutForAddCart"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTotal">
+
+                        <TextView
+                            android:id="@+id/btnAddCart"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/ic_button_border_left_circular"
+                            android:fontFamily="@font/dm_sans_bold"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="@drawable/custom_left_round_ripple"
+                            android:letterSpacing="0.08"
+                            android:text="Add to your cart"
+                            android:textAlignment="center"
+                            android:textColor="@color/primary_text_color"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btnCheckoutFor"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:theme="@style/Rounded.Cut.End"
+                            app:cardElevation="@dimen/_12sdp"
+                            app:cardPreventCornerOverlap="false">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_gradient_one_side_rounded"
+                                android:fontFamily="@font/dm_sans_bold"
+                                android:gravity="center"
+                                android:letterSpacing="0.06"
+                                android:padding="@dimen/_10sdp"
+                                android:text="Checkout For:\nMarcia"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                app:drawableEndCompat="@drawable/ic_arrow_forward" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/layoutBadge"
+            layout="@layout/view_badge"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginTop="@dimen/_minus8sdp"
+            android:layout_marginEnd="@dimen/_minus8sdp"
+            app:layout_constraintEnd_toEndOf="@id/btnCheckoutFloat"
+            app:layout_constraintTop_toTopOf="@id/btnCheckoutFloat" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnCheckoutFloat"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_16sdp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/ic_button_bg_less_rounded"
+                android:padding="@dimen/_18sdp"
+                android:src="@drawable/ic_arrow_forward" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background (track) of the progress bar -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/wallet_progress_background" /> <!-- Change to your background color -->
+            <corners android:radius="16dp" /> <!-- Adjust corner radius as needed -->
+            <stroke android:width="1dp" android:color="@color/wallet_progress_border"/>
+        </shape>
+    </item>
+    <!-- Progress (filled) part of the progress bar -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <!-- Linear gradient from startColor to endColor -->
+                <gradient
+                    android:angle="270"
+                    android:startColor="#5AB0FF"
+                    android:endColor="#0079FF"
+                    android:type="linear" />
+                <corners android:radius="16dp" /> <!-- Adjust corner radius as needed -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

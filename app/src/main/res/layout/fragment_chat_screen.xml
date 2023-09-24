@@ -84,7 +84,7 @@
                     android:layout_width="@dimen/_5sdp"
                     android:layout_height="@dimen/_5sdp"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_button_background" />
+                    android:background="@drawable/ic_button_background_circle" />
 
                 <TextView
                     android:id="@+id/tvOnlineStatus"
