@@ -15,6 +15,7 @@ import com.business.swey.core.models.ListingPageProductDTO
 import com.business.swey.core.models.ListingPageProductSectionDTO
 import com.business.swey.core.utils.Enum
 import com.business.swey.databinding.FragmentShopBinding
+import com.business.swey.features.checkout.fragments.CheckoutCartFragment
 import com.business.swey.features.listingDetails.FilterBottomSheetFragment
 import com.business.swey.features.listingDetails.ListingDetailActivity
 import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
@@ -45,6 +46,11 @@ class ShopFragment : Fragment() {
 
         binding.ibFilterButton.setOnClickListener {
             FilterBottomSheetFragment.getInstance().show(childFragmentManager, "FilterSheetFragment")
+        }
+
+        binding.layoutBadge.count = "4"
+        binding.btnCheckoutFloat.setOnClickListener {
+            CheckoutCartFragment.getInstance().show(childFragmentManager, CheckoutCartFragment.TAG)
         }
 
         binding.rvListingPage.addOnScrollListener(object : RecyclerView.OnScrollListener() {
