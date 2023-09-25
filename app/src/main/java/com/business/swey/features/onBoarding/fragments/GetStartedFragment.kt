@@ -4,7 +4,7 @@ import com.business.swey.R
 import com.business.swey.core.base.FullScreenDialogBindingFragment
 import com.business.swey.databinding.FragmentGetStartedBinding
 
-class GetStartedBindingFragment : FullScreenDialogBindingFragment<FragmentGetStartedBinding>() {
+class GetStartedFragment : FullScreenDialogBindingFragment<FragmentGetStartedBinding>() {
 
 
     override fun getLayout() = R.layout.fragment_get_started
@@ -22,6 +22,6 @@ class GetStartedBindingFragment : FullScreenDialogBindingFragment<FragmentGetSta
 
     companion object {
         const val TAG = "GetStartedFragment"
-        fun getInstance(): GetStartedBindingFragment = GetStartedBindingFragment()
+        fun getInstance(): GetStartedFragment = GetStartedFragment()
     }
 }

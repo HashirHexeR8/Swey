@@ -12,9 +12,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
 import com.business.swey.R
+import com.google.android.material.elevation.SurfaceColors
 
 
-abstract class FullScreenDialogBindingFragment<DB : ViewDataBinding> :
+abstract class FullScreenDialogBindingFragment<DB : ViewDataBinding>() :
     DialogFragment() {
 
     lateinit var _binding: DB
@@ -50,9 +51,15 @@ abstract class FullScreenDialogBindingFragment<DB : ViewDataBinding> :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding.root.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.primary_background_color))
+        dialog?.window?.navigationBarColor = SurfaceColors.SURFACE_0.getColor(requireContext())
+        updateStatusBar()
         initViews(_binding)
         setListeners(_binding)
         setObservers()
+    }
+
+    private fun updateStatusBar() {
+        dialog?.window?.statusBarColor = SurfaceColors.SURFACE_0.getColor(requireContext())
     }
 
     fun <DB : ViewDataBinding> openDialogSheet(

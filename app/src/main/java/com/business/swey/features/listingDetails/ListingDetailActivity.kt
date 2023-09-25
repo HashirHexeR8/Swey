@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.business.swey.R
+import com.business.swey.core.extensions.adjustTheme
 import com.business.swey.databinding.ActivityListingDetailBinding
 import com.business.swey.features.listingDetails.adapters.ListingDetailRecyclerViewAdapter
 import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
@@ -20,6 +21,7 @@ class ListingDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityListingDetailBinding.inflate(layoutInflater)
+        adjustTheme()
         setContentView(viewBinding.root)
 
         viewBinding.rvProductImages.layoutManager = LinearLayoutManager(this@ListingDetailActivity, LinearLayoutManager.HORIZONTAL, false)

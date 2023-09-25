@@ -21,7 +21,17 @@ class Enum {
         QUICK_PAY_ICON(60),
         QUICK_PAY_PERSON(61);
     }
+    enum class CartItemType(val value: Int) {
+        CART_ITEM(10);
+    }
 
+    enum class UserPictureItemType(val value: Int) {
+        USER(20);
+    }
+
+    enum class CreditCardItemType(val value: Int) {
+        CARD(30);
+    }
 
     enum class SizeType(val value: String) {
         uk("UK"),

@@ -4,7 +4,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/primary_background_color">
 
         <RelativeLayout
@@ -71,5 +71,35 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/listingPageSearch" />
+
+        <include
+            android:id="@+id/layoutBadge"
+            layout="@layout/view_badge"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginTop="@dimen/_minus8sdp"
+            android:layout_marginEnd="@dimen/_minus8sdp"
+            app:layout_constraintEnd_toEndOf="@id/btnCheckoutFloat"
+            app:layout_constraintTop_toTopOf="@id/btnCheckoutFloat" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnCheckoutFloat"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_16sdp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/ic_button_bg_less_rounded"
+                android:padding="@dimen/_14sdp"
+                android:src="@drawable/ic_cart_outline_white" />
+
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
