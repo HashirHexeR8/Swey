@@ -1,80 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/primary_background_color"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            android:background="@color/primary_background_color">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|snap">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_30sdp">
+
+                    <TextView
+                        android:id="@+id/tvQuickPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:fontFamily="@font/dm_sans_bold"
+                        android:text="Quick Pay"
+                        android:textColor="@color/primary_text_color"
+                        android:textSize="@dimen/_22ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btQuickPaySetting"
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:padding="@dimen/_30sdp"
+                        app:cardBackgroundColor="#33D8D8D8"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvQuickPay"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvQuickPay">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_18sdp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_dots" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewQuickPay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvQuickPay"
+                        tools:listitem="@layout/item_chat_quick_pay" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tvQuickPay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
-                    android:fontFamily="@font/dm_sans_bold"
-                    android:text="Quick Pay"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="@dimen/_22ssp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btQuickPaySetting"
-                    android:layout_width="@dimen/_38sdp"
-                    android:layout_height="@dimen/_38sdp"
-                    android:layout_marginEnd="@dimen/_16sdp"
-                    android:padding="@dimen/_30sdp"
-                    app:cardBackgroundColor="#33D8D8D8"
-                    app:cardCornerRadius="50dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintBottom_toBottomOf="@id/tvQuickPay"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/tvQuickPay">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/_18sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_dots" />
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewQuickPay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvQuickPay"
-                    tools:listitem="@layout/item_chat_quick_pay" />
-
                 <View
                     android:id="@+id/view"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="@dimen/_30sdp"
                     android:background="#1961636F"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/recyclerViewQuickPay" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tvTitle"
@@ -87,7 +98,7 @@
                     android:textColor="@color/primary_text_color"
                     android:textSize="@dimen/_22ssp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    app:layout_constraintTop_toTopOf="@+id/view"
                     app:layout_goneMarginStart="@dimen/_34sdp" />
 
                 <TextView
@@ -104,20 +115,33 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/tvTitle"
                     app:layout_goneMarginStart="@dimen/_34sdp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primary_background_color"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabLayoutChats"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    app:tabMode="scrollable"
                     android:layout_marginTop="@dimen/_16sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
-                    app:tabIndicator="@drawable/tab_indicator"
-                    app:tabIndicatorColor="@color/appPrimaryColor"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:tabIndicatorFullWidth="false"
                     app:tabIndicatorHeight="1dp"
+                    app:tabMode="scrollable"
+                    app:tabIndicator="@drawable/tab_indicator"
+                    app:tabIndicatorColor="@color/appPrimaryColor"
                     app:tabSelectedTextColor="@color/appPrimaryColor"
                     app:tabTextAppearance="@style/tabTextStyleChat"
                     app:tabTextColor="@color/tabs_text_color" />
@@ -130,20 +154,21 @@
                     app:layout_constraintStart_toEndOf="@id/tabLayoutChats"
                     app:layout_constraintTop_toBottomOf="@id/tabLayoutChats" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.core.widget.NestedScrollView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_30sdp"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/_30sdp">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnChatOptions"
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
-                app:cardCornerRadius="50dp"
                 android:elevation="@dimen/_4sdp"
+                app:cardCornerRadius="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -156,13 +181,15 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_add"/>
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>

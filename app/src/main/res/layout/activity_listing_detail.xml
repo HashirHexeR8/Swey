@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/primary_background_color">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -16,12 +17,13 @@
 
                 <ImageView
                     android:id="@+id/ibBackButton"
-                    android:layout_width="17dp"
-                    android:layout_height="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/ic_back_arrow"
                     android:background="@null"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="25dp"
+                    android:scaleX="0.9"
+                    android:scaleY="0.9"
+                    android:padding="@dimen/_16sdp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
@@ -30,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:text="Original White Shoes"
                     android:textSize="18sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primary_text_color"
                     android:lines="1"
                     android:fontFamily="@font/dm_sans_bold"
                     android:layout_marginStart="18dp"
@@ -42,7 +44,7 @@
                     android:id="@+id/ibOptionsButton"
                     android:layout_width="17dp"
                     android:layout_height="10dp"
-                    android:src="@drawable/ic_menu_button"
+                    android:src="@drawable/ic_dots"
                     android:background="@null"
                     android:layout_marginEnd="30dp"
                     android:layout_marginTop="25dp"
@@ -141,7 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:orientation="horizontal"
-                    android:background="#EDEDED"
+                    android:background="@color/secondary_separator_color"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="18dp"
                     android:layout_marginEnd="18dp"
@@ -151,7 +153,7 @@
                     android:id="@+id/tlListingDetails"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
-                    app:tabTextColor="@color/black"
+                    app:tabTextColor="@color/tabs_text_color"
                     app:tabTextAppearance="@style/tabTextStyle"
                     app:tabIndicatorColor="@color/appPrimaryColor"
                     app:tabSelectedTextColor="@color/appPrimaryColor"
@@ -194,9 +196,10 @@
         <LinearLayout
             android:id="@+id/llItemPriceButtonContainer"
             android:layout_width="match_parent"
-            android:layout_height="102dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_12sdp"
+            android:background="@color/primary_background_color"
             android:orientation="horizontal"
-            android:background="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent">
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="82dp"

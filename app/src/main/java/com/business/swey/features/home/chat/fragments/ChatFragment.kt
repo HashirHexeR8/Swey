@@ -8,6 +8,7 @@ import com.business.swey.core.base.BindingFragment
 import com.business.swey.core.models.PersonQuickPayDto
 import com.business.swey.databinding.FragmentChatBinding
 import com.business.swey.features.home.chat.adapters.QuickPayAdapter
+import com.business.swey.features.settings.fragments.SettingsFragment
 import com.google.android.material.tabs.TabLayout
 
 class ChatFragment : BindingFragment<FragmentChatBinding>() {
@@ -29,7 +30,7 @@ class ChatFragment : BindingFragment<FragmentChatBinding>() {
 
     override fun setListeners(binding: FragmentChatBinding) {
         binding.btQuickPaySetting.setOnClickListener {
-            Toast.makeText(requireContext(), "Settings", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Quick Pay Settings", Toast.LENGTH_SHORT).show()
         }
         binding.btnChatOptions.setOnClickListener {
             ChatOptionsDialog.getInstance().show(childFragmentManager, ChatOptionsDialog.TAG)

@@ -2,6 +2,9 @@ package com.business.swey
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import com.business.swey.core.utils.SharedPreferences
+import com.business.swey.core.utils.SharedPreferences.IS_DARK_MODE_ENABLED
+import com.business.swey.core.utils.ThemeUtil
 
 class SweyApplication: Application() {
 
@@ -18,7 +21,10 @@ class SweyApplication: Application() {
     }
 
     override fun onCreate() {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate()
+        val selectedIsDark = SharedPreferences.getPreference(this, IS_DARK_MODE_ENABLED, defaultValue = false) as Boolean
+        val currentIsDark = ThemeUtil.isDarkTheme(this)
+        if (selectedIsDark != currentIsDark)
+            ThemeUtil.toggleTheme(this)
     }
 }

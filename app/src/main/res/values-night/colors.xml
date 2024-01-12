@@ -35,5 +35,6 @@
     <color name="check_mark_color">@color/white</color>
     <color name="wallet_progress_background">@color/background_color_variant_A</color>
     <color name="wallet_progress_border">#1AFFFFFF</color>
-    <color name="app_green">#34F85C</color>
+    <color name="settings_icon_color">#FFFFFF</color>
+    <color name="settings_icon_color_purple">#FFFFFF</color>
 </resources>

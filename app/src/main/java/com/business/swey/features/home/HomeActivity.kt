@@ -2,10 +2,13 @@ package com.business.swey.features.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.business.swey.R
 import com.business.swey.core.extensions.adjustTheme
 import com.business.swey.databinding.ActivityHomeBinding
+import com.google.android.material.appbar.CollapsingToolbarLayout
+
 
 class HomeActivity : AppCompatActivity() {
 

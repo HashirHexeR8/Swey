@@ -19,6 +19,7 @@ import com.business.swey.features.checkout.fragments.CheckoutCartFragment
 import com.business.swey.features.listingDetails.FilterBottomSheetFragment
 import com.business.swey.features.listingDetails.ListingDetailActivity
 import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
+import com.business.swey.features.settings.fragments.SettingsFragment
 
 class ShopFragment : Fragment() {
 
@@ -51,6 +52,10 @@ class ShopFragment : Fragment() {
         binding.layoutBadge.count = "4"
         binding.btnCheckoutFloat.setOnClickListener {
             CheckoutCartFragment.getInstance().show(childFragmentManager, CheckoutCartFragment.TAG)
+        }
+
+        binding.userImage.setOnClickListener {
+            SettingsFragment.getInstance().show(childFragmentManager, SettingsFragment.TAG)
         }
 
         binding.rvListingPage.addOnScrollListener(object : RecyclerView.OnScrollListener() {
