@@ -20,13 +20,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:autoSizeMaxTextSize="@dimen/_16sdp"
+            android:autoSizeMinTextSize="@dimen/_8sdp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
             android:background="@drawable/ic_button_bg"
             android:fontFamily="@font/poppins_semi_bold"
             android:gravity="center"
-            tools:text="2"
             android:text="@{count}"
             android:textColor="@color/white"
-            android:textSize="@dimen/_16sdp" />
+            tools:text="2" />
 
     </com.google.android.material.card.MaterialCardView>
 </layout>

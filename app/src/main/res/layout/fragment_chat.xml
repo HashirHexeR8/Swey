@@ -76,7 +76,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_8sdp">
 
                 <View
                     android:id="@+id/view"
@@ -92,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
                     android:fontFamily="@font/dm_sans_bold"
                     android:text="Chat"
                     android:textColor="@color/primary_text_color"
@@ -105,7 +106,6 @@
                     android:id="@+id/tvChatCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_16sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Chat Stores ( 2 )"
@@ -144,7 +144,17 @@
                     app:tabIndicatorColor="@color/appPrimaryColor"
                     app:tabSelectedTextColor="@color/appPrimaryColor"
                     app:tabTextAppearance="@style/tabTextStyleChat"
-                    app:tabTextColor="@color/tabs_text_color" />
+                    app:tabTextColor="@color/tabs_text_color"
+                    android:background="@color/primary_background_color"/>
+
+                <View
+                    android:id="@+id/tabLayoutSeparatorView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#1961636F"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tabLayoutChats" />
 
                 <FrameLayout
                     android:id="@+id/fragmentContainer"
@@ -152,7 +162,7 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="@id/tabLayoutChats"
                     app:layout_constraintStart_toEndOf="@id/tabLayoutChats"
-                    app:layout_constraintTop_toBottomOf="@id/tabLayoutChats" />
+                    app:layout_constraintTop_toBottomOf="@id/tabLayoutSeparatorView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
