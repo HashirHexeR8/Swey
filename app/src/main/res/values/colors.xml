@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dark_text">#2B2B2C</color>
     <color name="blackTransparent">#80292929</color>
     <color name="appPrimaryColor">#0079FF</color>
     <color name="primary_background_color">#FFFFFF</color>
@@ -35,5 +36,8 @@
     <color name="check_mark_color">@color/appPrimaryColor</color>
     <color name="wallet_progress_background">@color/edit_text_background</color>
     <color name="wallet_progress_border">#F0EEEE</color>
+    <color name="settings_icon_color">#353535</color>
+    <color name="settings_icon_color_purple">#200E32</color>
     <color name="app_green">#34F85C</color>
+    <color name="app_red">#E50000</color>
 </resources>

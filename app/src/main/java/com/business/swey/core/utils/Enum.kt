@@ -39,4 +39,13 @@ class Enum {
         eu("EU"),
         normal("Normal");
     }
+
+    enum class FilterTagItemType(val value: Int) {
+        FILTER_TAG(40);
+    }
+
+
+    enum class ShopNowItemType(val value: Int) {
+        SHOP_NOW(50);
+    }
 }

@@ -264,15 +264,15 @@ class ChatScreenFragment : FullScreenDialogBindingFragment<FragmentChatScreenBin
                 chatDirection = ChatDirection.UNKNOWN,
                 time = Date.from(Instant.now().plus(9, ChronoUnit.MINUTES))
             ),
-            ChatImageDto(
-                id = 5,
-                messageStatus = ChatStatusType.SEEN,
-                chatDirection = ChatDirection.RECEIVED,
-                chatType = ChatType.IMAGE,
-                time = Date.from(Instant.now().plus(1, ChronoUnit.MINUTES)),
-                imageSize = "153KB",
-                imageUrl = "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fHww&w=1000&q=80"
-            ),
+//            ChatImageDto(
+//                id = 5,
+//                messageStatus = ChatStatusType.SEEN,
+//                chatDirection = ChatDirection.RECEIVED,
+//                chatType = ChatType.IMAGE,
+//                time = Date.from(Instant.now().plus(1, ChronoUnit.MINUTES)),
+//                imageSize = "153KB",
+//                imageUrl = "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fHww&w=1000&q=80"
+//            ),
             ChatTextDto(
                 id = 6,
                 messageStatus = ChatStatusType.DELIVERED,
@@ -304,15 +304,15 @@ class ChatScreenFragment : FullScreenDialogBindingFragment<FragmentChatScreenBin
                 chatDirection = ChatDirection.UNKNOWN,
                 time = Date.from(Instant.now().plus(9, ChronoUnit.MINUTES))
             ),
-            ChatImageDto(
-                id = 10,
-                messageStatus = ChatStatusType.DELIVERED,
-                chatDirection = ChatDirection.SENT,
-                chatType = ChatType.IMAGE,
-                time = Date.from(Instant.now().plus(4, ChronoUnit.MINUTES)),
-                imageSize = "94KB",
-                imageUrl = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80️"
-            ),
+//            ChatImageDto(
+//                id = 10,
+//                messageStatus = ChatStatusType.DELIVERED,
+//                chatDirection = ChatDirection.SENT,
+//                chatType = ChatType.IMAGE,
+//                time = Date.from(Instant.now().plus(4, ChronoUnit.MINUTES)),
+//                imageSize = "94KB",
+//                imageUrl = "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80️"
+//            ),
             ChatTextDto(
                 id = 11,
                 messageStatus = ChatStatusType.SEEN,
@@ -360,26 +360,26 @@ class ChatScreenFragment : FullScreenDialogBindingFragment<FragmentChatScreenBin
                 chatDirection = ChatDirection.UNKNOWN,
                 time = Date.from(Instant.now().plus(9, ChronoUnit.MINUTES))
             ),
-            ChatVideoDto(
-                id = 17,
-                messageStatus = ChatStatusType.DELIVERED,
-                chatDirection = ChatDirection.SENT,
-                chatType = ChatType.VIDEO,
-                time = Date.from(Instant.now().plus(10, ChronoUnit.MINUTES)),
-                videoSize = "35MB",
-                thumbnailUrl = "https://marketplace.canva.com/EAEqfS4X0Xw/1/0/1600w/canva-most-attractive-youtube-thumbnail-wK95f3XNRaM.jpg",
-                videoUri = "android.resource://${activity?.packageName}/${R.raw.sample_1}"
-            ),
-            ChatVideoDto(
-                id = 18,
-                messageStatus = ChatStatusType.UNKNOWN,
-                chatDirection = ChatDirection.RECEIVED,
-                chatType = ChatType.VIDEO,
-                time = Date.from(Instant.now().plus(10, ChronoUnit.MINUTES)),
-                videoSize = "20MB",
-                thumbnailUrl = "https://marketplace.canva.com/EAFf5rfnPgA/1/0/1600w/canva-blue-modern-eye-catching-vlog-youtube-thumbnail-LEcp-BYepDU.jpg",
-                videoUri = "android.resource://${activity?.packageName}/${R.raw.sample_2}"
-            ),
+//            ChatVideoDto(
+//                id = 17,
+//                messageStatus = ChatStatusType.DELIVERED,
+//                chatDirection = ChatDirection.SENT,
+//                chatType = ChatType.VIDEO,
+//                time = Date.from(Instant.now().plus(10, ChronoUnit.MINUTES)),
+//                videoSize = "35MB",
+//                thumbnailUrl = "https://marketplace.canva.com/EAEqfS4X0Xw/1/0/1600w/canva-most-attractive-youtube-thumbnail-wK95f3XNRaM.jpg",
+//                videoUri = "android.resource://${activity?.packageName}/${R.raw.sample_1}"
+//            ),
+//            ChatVideoDto(
+//                id = 18,
+//                messageStatus = ChatStatusType.UNKNOWN,
+//                chatDirection = ChatDirection.RECEIVED,
+//                chatType = ChatType.VIDEO,
+//                time = Date.from(Instant.now().plus(10, ChronoUnit.MINUTES)),
+//                videoSize = "20MB",
+//                thumbnailUrl = "https://marketplace.canva.com/EAFf5rfnPgA/1/0/1600w/canva-blue-modern-eye-catching-vlog-youtube-thumbnail-LEcp-BYepDU.jpg",
+//                videoUri = "android.resource://${activity?.packageName}/${R.raw.sample_2}"
+//            ),
             ChatTextDto(
                 id = 19,
                 messageStatus = ChatStatusType.SEEN,
@@ -388,22 +388,22 @@ class ChatScreenFragment : FullScreenDialogBindingFragment<FragmentChatScreenBin
                 time = Date.from(Instant.now().plus(7, ChronoUnit.MINUTES)),
                 message = "Here's my pin location!!!😁"
             ),
-            ChatLocationDto(
-                id = 20,
-                messageStatus = ChatStatusType.UNKNOWN,
-                chatDirection = ChatDirection.RECEIVED,
-                chatType = ChatType.LOCATION,
-                time = Date.from(Instant.now().plus(15, ChronoUnit.MINUTES)),
-                imagePath = "https://www.mkiwi.com/maps/Google%20Map%20Limits/Google%20Static%20Maps%20API%20-%20Google%20Code_files/staticmap.png"
-            ),
-            ChatLocationDto(
-                id = 21,
-                messageStatus = ChatStatusType.SEEN,
-                chatDirection = ChatDirection.SENT,
-                chatType = ChatType.LOCATION,
-                time = Date.from(Instant.now().plus(16, ChronoUnit.MINUTES)),
-                imagePath = "https://www.mkiwi.com/maps/Google%20Map%20Limits/Google%20Static%20Maps%20API%20-%20Google%20Code_files/staticmap.png"
-            ),
+//            ChatLocationDto(
+//                id = 20,
+//                messageStatus = ChatStatusType.UNKNOWN,
+//                chatDirection = ChatDirection.RECEIVED,
+//                chatType = ChatType.LOCATION,
+//                time = Date.from(Instant.now().plus(15, ChronoUnit.MINUTES)),
+//                imagePath = "https://www.mkiwi.com/maps/Google%20Map%20Limits/Google%20Static%20Maps%20API%20-%20Google%20Code_files/staticmap.png"
+//            ),
+//            ChatLocationDto(
+//                id = 21,
+//                messageStatus = ChatStatusType.SEEN,
+//                chatDirection = ChatDirection.SENT,
+//                chatType = ChatType.LOCATION,
+//                time = Date.from(Instant.now().plus(16, ChronoUnit.MINUTES)),
+//                imagePath = "https://www.mkiwi.com/maps/Google%20Map%20Limits/Google%20Static%20Maps%20API%20-%20Google%20Code_files/staticmap.png"
+//            ),
             ChatTimestampDto(
                 id = 22,
                 timestamp = "10:15 PM",
@@ -411,24 +411,24 @@ class ChatScreenFragment : FullScreenDialogBindingFragment<FragmentChatScreenBin
                 chatDirection = ChatDirection.UNKNOWN,
                 time = Date.from(Instant.now().plus(9, ChronoUnit.MINUTES))
             ),
-            ChatPayDto(
-                id = 23,
-                messageStatus = ChatStatusType.UNKNOWN,
-                chatDirection = ChatDirection.RECEIVED,
-                chatType = ChatType.QUICK_PAY,
-                time = Date.from(Instant.now().plus(16, ChronoUnit.MINUTES)),
-                paymentDirection = PaymentDirection.REQUEST,
-                amount = 9.25
-            ),
-            ChatPayDto(
-                id = 24,
-                messageStatus = ChatStatusType.SEEN,
-                chatDirection = ChatDirection.SENT,
-                chatType = ChatType.QUICK_PAY,
-                time = Date.from(Instant.now().plus(16, ChronoUnit.MINUTES)),
-                paymentDirection = PaymentDirection.REQUEST,
-                amount = 24.75
-            )
+//            ChatPayDto(
+//                id = 23,
+//                messageStatus = ChatStatusType.UNKNOWN,
+//                chatDirection = ChatDirection.RECEIVED,
+//                chatType = ChatType.QUICK_PAY,
+//                time = Date.from(Instant.now().plus(16, ChronoUnit.MINUTES)),
+//                paymentDirection = PaymentDirection.REQUEST,
+//                amount = 9.25
+//            ),
+//            ChatPayDto(
+//                id = 24,
+//                messageStatus = ChatStatusType.SEEN,
+//                chatDirection = ChatDirection.SENT,
+//                chatType = ChatType.QUICK_PAY,
+//                time = Date.from(Instant.now().plus(16, ChronoUnit.MINUTES)),
+//                paymentDirection = PaymentDirection.REQUEST,
+//                amount = 24.75
+//            )
         )
         messages[2].repliedTo = messages[1] as? ChatTextDto
         messages[8].repliedTo = messages[7] as? ChatTextDto

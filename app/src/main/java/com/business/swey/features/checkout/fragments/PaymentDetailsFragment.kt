@@ -54,7 +54,10 @@ class PaymentDetailsFragment : FullScreenDialogBindingFragment<FragmentPaymentDe
 
         binding.btnCheckoutBottom.setOnClickListener {
             when(currentViewType){
-                CurrentViewType.PAYMENT -> loadChooseCard(binding)
+                CurrentViewType.PAYMENT -> openDialogSheet(
+                    ReceiptSuccessfulFragment.getInstance(),
+                    ReceiptSuccessfulFragment.TAG
+                )//loadChooseCard(binding)
                 CurrentViewType.CARDS -> openDialogSheet(
                     ReceiptSuccessfulFragment.getInstance(),
                     ReceiptSuccessfulFragment.TAG

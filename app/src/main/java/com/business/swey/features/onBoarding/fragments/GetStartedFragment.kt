@@ -2,6 +2,7 @@ package com.business.swey.features.onBoarding.fragments
 
 import com.business.swey.R
 import com.business.swey.core.base.FullScreenDialogBindingFragment
+import com.business.swey.core.base.TestLayoutFragment
 import com.business.swey.databinding.FragmentGetStartedBinding
 
 class GetStartedFragment : FullScreenDialogBindingFragment<FragmentGetStartedBinding>() {
@@ -18,6 +19,10 @@ class GetStartedFragment : FullScreenDialogBindingFragment<FragmentGetStartedBin
         binding.tvSignIn.setOnClickListener {
             openDialogSheet(LoginBindingFragment.getInstance(), LoginBindingFragment.TAG)
         }
+//        binding.onboardingIllustration.setOnLongClickListener {
+//            openDialogSheet(TestLayoutFragment.getInstance(), TestLayoutFragment.TAG)
+//            true
+//        }
     }
 
     companion object {

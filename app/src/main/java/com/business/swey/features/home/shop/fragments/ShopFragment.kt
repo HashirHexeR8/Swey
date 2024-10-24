@@ -1,24 +1,34 @@
 package com.business.swey.features.home.shop.fragments
 
+import DotIndicatorHandler
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
-import android.widget.ImageView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.SnapHelper
 import com.business.swey.R
+import com.business.swey.core.models.FilterItemDto
 import com.business.swey.core.models.ListingPageProductDTO
 import com.business.swey.core.models.ListingPageProductSectionDTO
+import com.business.swey.core.models.ShopItemDto
 import com.business.swey.core.utils.Enum
 import com.business.swey.databinding.FragmentShopBinding
 import com.business.swey.features.checkout.fragments.CheckoutCartFragment
+import com.business.swey.features.home.shop.adapter.FilterTagsRecyclerViewAdapter
+import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
+import com.business.swey.features.home.shop.adapter.ShopNowRecyclerViewAdapter
 import com.business.swey.features.listingDetails.FilterBottomSheetFragment
 import com.business.swey.features.listingDetails.ListingDetailActivity
-import com.business.swey.features.home.shop.adapter.ListingPageRecyclerViewAdapter
+import com.business.swey.features.settings.fragments.SettingsFragment
+
 
 class ShopFragment : Fragment() {
 
@@ -40,17 +50,84 @@ class ShopFragment : Fragment() {
                 val dialogFragment = ListingPageProductDetailDialogFragment.getInstance(product.imageResId)
                 dialogFragment.show(childFragmentManager, "signature")
             }, ::onProductClick)
-        val searchImgId = resources.getIdentifier("android:id/search_mag_icon", null, null)
-        val searchImageIcon = binding.searchView.findViewById<ImageView>(searchImgId)
-        searchImageIcon.setImageResource(R.drawable.ic_search)
+
+        binding.rvFilterTags.adapter = FilterTagsRecyclerViewAdapter().apply {
+            initialize(
+                list = listOf(
+                    FilterItemDto(1, "For You"),
+                    FilterItemDto(2, "Men"),
+                    FilterItemDto(3, "Women"),
+                    FilterItemDto(5, "Jackets"),
+                    FilterItemDto(6, "Winter")
+                ),
+                defaultSelectedIndex = 0,
+                onSelected = {
+                    Toast.makeText(requireContext(), it.tagName, Toast.LENGTH_SHORT).show()
+                }
+            )
+        }
+
+        binding.rvShopNow.adapter = ShopNowRecyclerViewAdapter().apply {
+            initialize(
+                list = listOf(
+                    ShopItemDto(
+                        id = 1,
+                        name = "Men's Casual",
+                        description = "Comfortable and stylish cotton t-shirt for everyday wear.",
+                        imageUrl = "https://media.istockphoto.com/id/121356390/photo/looking-good.jpg?s=612x612&w=0&k=20&c=qVni_an0FRHXnLoj5TBj0Pa8xGItRUR8i9vT97qmBZM="
+                    ),
+                    ShopItemDto(
+                        id = 2,
+                        name = "Women's Denim",
+                        description = "Classic denim jacket with a modern fit, perfect for layering.",
+                        imageUrl = "https://img.freepik.com/premium-photo/fashion-young-woman-red-suit_374827-879.jpg"
+                    ),
+                    ShopItemDto(
+                        id = 3,
+                        name = "Unisex Hoodie",
+                        description = "Cozy hoodie with a minimalist design, suitable for all seasons.",
+                        imageUrl = "https://media.istockphoto.com/id/486769950/photo/retro-african-american-businessman-in-blue-suit-holding-sunglasses.jpg?s=612x612&w=0&k=20&c=IQTcRuxCl58UHzTo3tq1hN3P1SAAabrWZ3dju0Dx2O0="
+                    ),
+                    ShopItemDto(
+                        id = 4,
+                        name = "Running Shoes",
+                        description = "Lightweight and breathable running shoes designed for comfort.",
+                        imageUrl = "https://images.pexels.com/photos/2836486/pexels-photo-2836486.jpeg?cs=srgb&dl=pexels-alipazani-2836486.jpg&fm=jpg"
+                    )
+                ),
+                onClick = {
+                    Toast.makeText(requireContext(), it.name, Toast.LENGTH_SHORT).show()
+                }
+            )
+        }
+        val pagerSnapHelper = PagerSnapHelper()
+        pagerSnapHelper.attachToRecyclerView(binding.rvShopNow)
+
+        val dotIndicatorHandler = DotIndicatorHandler(requireContext(), binding.dotIndicatorLayout)
+
+        dotIndicatorHandler.setupDots(4)
+
+        binding.rvShopNow.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val snapView = pagerSnapHelper.findSnapView(recyclerView.layoutManager)
+                val position = snapView?.let { recyclerView.layoutManager?.getPosition(it) }
+                dotIndicatorHandler.updateDots(position ?: 0)
+            }
+        })
 
         binding.ibFilterButton.setOnClickListener {
             FilterBottomSheetFragment.getInstance().show(childFragmentManager, "FilterSheetFragment")
         }
 
+        binding.profileBadge.count = "8"
         binding.layoutBadge.count = "4"
         binding.btnCheckoutFloat.setOnClickListener {
             CheckoutCartFragment.getInstance().show(childFragmentManager, CheckoutCartFragment.TAG)
+        }
+
+        binding.userImage.setOnClickListener {
+            SettingsFragment.getInstance().show(childFragmentManager, SettingsFragment.TAG)
         }
 
         binding.rvListingPage.addOnScrollListener(object : RecyclerView.OnScrollListener() {
